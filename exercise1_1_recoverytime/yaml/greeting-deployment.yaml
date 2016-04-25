@@ -1,0 +1,21 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    run: greeting-rpi
+    visualize: "true"
+  name: greeting-rpi
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: greeting-rpi
+        run: greeting-rpi
+        visualize: "true"
+    spec:
+      containers:
+      - image: rpicloud/greeting-rpi
+        name: greeting-rpi
+  minReadySeconds: 120
+
