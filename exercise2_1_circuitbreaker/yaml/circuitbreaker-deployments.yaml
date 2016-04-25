@@ -1,0 +1,67 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    run: service-0
+    visualize: "true"
+  name: service-0
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: service-0
+        run: service-0
+        visualize: "true"
+    spec:
+      containers: 
+      - image: rpicloud/exp-circuitbreaker-service-0:0.0.7
+        name: service-0
+  minReadySeconds: 120
+
+---
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    run: service-1   
+    visualize: "true"
+  name: service-1   
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: service-1
+        run: service-1  
+        visualize: "true"
+    spec:
+      containers: 
+      - image: rpicloud/exp-circuitbreaker-service-1:0.0.7
+        name: service-1
+  minReadySeconds: 120
+
+---
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    run: service-2   
+    visualize: "true"
+  name: service-2   
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: service-2
+        run: service-2   
+        visualize: "true"
+    spec:
+      containers: 
+      - image: rpicloud/exp-circuitbreaker-service-2:0.0.7
+        name: service-2
+  minReadySeconds: 120
+

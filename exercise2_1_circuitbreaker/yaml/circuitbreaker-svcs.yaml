@@ -1,0 +1,57 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: service-0
+    run: service-0
+    visualize: "true"
+  name: service-0
+spec:
+  externalIPs:
+  - <INSERT YOUR MASTER IP HERE >
+  ports:
+  - port: 9000
+    protocol: TCP
+    targetPort: 9000
+  selector:
+    app: service-0
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: service-1   
+    run: service-1   
+    visualize: "true"
+  name: service-1
+spec:
+  externalIPs:
+  - <INSERT YOUR MASTER IP HERE >
+  ports:
+  - port: 9001
+    protocol: TCP
+    targetPort: 9001
+  selector:
+    app: service-1
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: service-2   
+    run: service-2   
+    visualize: "true"
+  name: service-2
+spec:
+  externalIPs:
+  - <INSERT YOUR MASTER IP HERE >
+  ports:
+  - port: 9002
+    protocol: TCP
+    targetPort: 9002
+  selector:
+    app: service-2
