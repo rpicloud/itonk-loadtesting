@@ -43,7 +43,7 @@ if [ -z "$HOST" ]
     echo 
     echo Make sure that you only pull the plug of a slave. Do not pull the plug of the MASTER "(top node)".
     echo Use kubectl to find the a node where only one application is scheduled.
-    echo Run the test with replicas=1, replicas=2, and replicas=3. 
+    echo Run the test with replicas=1, replicas=2, and replicas=5. 
     echo and Rates of 100 and 200. 
 
   	echo "GET http://"$HOST"" | ../vegeta attack -rate="$RATE" -duration="${duration}" -output=$DIR/$filename.bin 
